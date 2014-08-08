@@ -4,11 +4,36 @@
 
 body{
   background:url("halftone.png");
-  border-top:4px solid #AEA8D3;
+  border-top:5px solid rgba(92, 151, 191, 0.6);
 }
 
 .logo{
-  font-size:60px;
+  font-size:40px;
   color:#bdc3c7;
+}
 
+.jumbotron{
+  background:#fff;
+}
+
+.recommendation-section{
+  margin-top:50px;
+}
+
+.shoe-title{
+  color:#6C7A89;
+  margin-bottom:30px;
+}
+
+.shoe-image{
+  width:100%;
+}
+
+.tag-section, .vote-section{
+  margin-top:80px;
+}
+
+.less{
+  margin-left:-10px;
+  color:rgba(92, 151, 191, 0.6);
 }

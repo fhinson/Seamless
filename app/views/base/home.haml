@@ -1,2 +1,18 @@
 .container
-  %h1.logo seamless
+  %h1.logo
+    seam
+    %span.less less
+
+  .recommendation-section
+    .row
+      .col-xs-2
+        .tag-section
+          tags & info
+      .col-xs-7
+        %h3.shoe-title
+          Nike Air Yeezy II Black Solar Red
+        .jumbotron
+          = image_tag "example.jpg", :class => "shoe-image"
+      .col-xs-3
+        .vote-section
+          vote icons
