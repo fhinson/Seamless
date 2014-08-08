@@ -4,7 +4,7 @@
 
 body{
   background:url("halftone.png");
-  border-top:4px solid #AEA8D3;
+  border-top:5px solid rgba(92, 151, 191, 0.6);
 }
 
 .logo{
@@ -33,3 +33,7 @@ body{
   margin-top:80px;
 }
 
+.less{
+  margin-left:-10px;
+  color:rgba(92, 151, 191, 0.6);
+}
