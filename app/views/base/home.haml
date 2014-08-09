@@ -39,7 +39,7 @@
     .row
       .col-xs-2.product
         %h3.shoe-price
-          = "$" + number_to_currency(@shoe.price)
+          = number_to_currency(@shoe.price)
         %p.shoe-description
           = @shoe.description
         .container

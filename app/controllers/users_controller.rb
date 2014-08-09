@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  include UsersHelper
+
   def create
     @user = User.new(user_params)
     @user.age = set_age_group(params[:user][:age])
@@ -15,14 +17,63 @@ class UsersController < ApplicationController
   end
 
   def get_shoe
-    shoe = Shoe.find(params[:shoe_id])
-    @user.styles['shoe.product_type'] = update_show_styles(shoe, params[:vote])
-
-
+    @shoe = Shoe.find(params[:shoe_id])
     @user = User.find(params[:id])
+
+    if @shoe.product_type == "Work-Outdoor"
+      @user.Work_Outdoor += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Military-Law-Enforcement"
+      @user.Military_Law_Enforcement += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Boots"
+      @user.Boots += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Dress"
+      @user.Dress += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Western"
+      @user.Western += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Casual"
+      @user.Casual += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Sandals"
+      @user.Sandals += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Athletic"
+      @user.Athletic += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Classics"
+      @user.Classics += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Bowling"
+      @user.Bowling += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Accessories"
+      @user.Accessories += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Nursing"
+      @user.Nursing += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Slippers"
+      @user.Slippers += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Service-Hospitality"
+      @user.Service_Hospitality += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    elsif @shoe.product_type == "Handbads"
+      @user.Handbads += update_shoe_styles(@shoe, params[:vote].to_f)
+
+    else
+      puts "ouch"
+    end
+
+    @user.save
 
 
     @shoe = Shoe.all.where(gender: @user.gender).shuffle[0]
+
     render json: [@shoe.name,  @shoe.seller, @shoe.url, @shoe.price, @shoe.description]
   end
 

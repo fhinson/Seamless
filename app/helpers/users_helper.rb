@@ -14,9 +14,9 @@ module UsersHelper
   # changes after up or down-vote, voteType is 1 or -1 (up or down)
   def update_shoe_styles(shoe, voteType)
     shoes = Shoe.where(product_type: shoe.product_type)
-    avg = shoes.pluck(:popularty).inject(:+) / shoes.count
+    avg = (shoes.pluck(:popularity).flatten.inject(:+)) / (shoes.count).to_f
 
     # user.styles['shoe.product_type']
-    return (voteType) * (shoe.popularty / avg)
+    return (voteType) * (shoe.popularity.to_f / avg.to_f)
   end
 end

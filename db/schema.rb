@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809211913) do
+ActiveRecord::Schema.define(version: 20140809215007) do
 
   create_table "shoes", force: true do |t|
     t.string   "name"
@@ -57,7 +57,22 @@ ActiveRecord::Schema.define(version: 20140809211913) do
     t.string   "gender"
     t.string   "music"
     t.string   "sport"
-    t.float    "si",         default: 0.5
+    t.float    "si",                       default: 0.5
+    t.float    "Work_Outdoor",             default: 0.5
+    t.float    "Military_Law_Enforcement", default: 0.5
+    t.float    "Boots",                    default: 0.5
+    t.float    "Dress",                    default: 0.5
+    t.float    "Western",                  default: 0.5
+    t.float    "Casual",                   default: 0.4
+    t.float    "Sandals",                  default: 0.4
+    t.float    "Athletic",                 default: 0.5
+    t.float    "Classics",                 default: 0.5
+    t.float    "Bowling",                  default: 0.5
+    t.float    "Accessories",              default: 0.5
+    t.float    "Nursing",                  default: 0.5
+    t.float    "Slippers",                 default: 0.5
+    t.float    "Service_Hospitality",      default: 0.6
+    t.float    "Handbads",                 default: 0.6
   end
 
 end
