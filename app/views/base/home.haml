@@ -30,6 +30,8 @@
   .recommendation-section
     .row
       .col-xs-2
+        %h3.shoe-price.product
+          = number_to_currency(@shoe.price)
         .tag-section.product
           .label.label-seamless
             Etsy

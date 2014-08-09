@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def get_shoe
     @shoe = Shoe.all.shuffle[0]
-    render json: [@shoe.name,  @shoe.seller, @shoe.url]
+    render json: [@shoe.name,  @shoe.seller, @shoe.url, @shoe.price]
   end
 
   private
