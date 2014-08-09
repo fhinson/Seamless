@@ -10,26 +10,29 @@
       %h1.welcome Hi. What's your name?
       %input.form-control.inputter{:placeholder => "John Doe", :style => "border:0; height:50px;", :onkeypress => "return runScript(event)"}
       %select.form-control.inputter2{:style => "display:none"}
-        %option{value: "one"} Men's
-        %option{value: "two"} Women's
-        %option{value: "three"} Youth Girl
-        %option{value: "four"} Unisex's
-        %option{value: "five"} Infant
-        %option{value: "six"} Childrens
+        %option{value: "one"} Range:
+        %option{value: "two"} Men's
+        %option{value: "three"} Women's
+        %option{value: "four"} Youth Girl
+        %option{value: "five"} Unisex's
+        %option{value: "six"} Infant
+        %option{value: "seven"} Childrens
       %select.form-control.inputter3{:style => "display:none"}
-        %option{value: "one"} Soccer
+        %option{value: "one"}  Sport:
         %option{value: "two"} Basketball
         %option{value: "three"} Baseball
         %option{value: "four"} Football
         %option{value: "five"} Running
         %option{value: "six"} Swimming
+        %option{value: "seven"} Soccer
       %select.form-control.inputter4{:style => "display:none"}
-        %option{value: "one"} Classical
+        %option{value: "one"} Music:
         %option{value: "two"} Country
         %option{value: "three"} Electronic
         %option{value: "four"} Pop
         %option{value: "five"} Rock
         %option{value: "six"} Hip-Hop
+        %option{value: "seven"} Classical
 
 
   .recommendation-section{:style => "display:none"}
