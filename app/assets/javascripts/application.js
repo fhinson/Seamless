@@ -40,7 +40,7 @@ function getShoe(obj){
   $.ajax({
     url: '/users/' + id + '/get_shoe',
     type:   'GET',
-    data:{vote: (obj == "fadeOutDown" ? -1 : 1), shoeId: shoeId},
+    data:{vote: (obj == "fadeOutDown" ? -1 : 1), shoe_id: shoeId},
     dataType: 'json',
     success: function (data) {
       $(".shoe-title").children("a").attr("href", data[1]);
