@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'base#home'
 
   resources :users, only: [:create] do
-    collection do
+    member do
       get :get_shoe
     end
   end
