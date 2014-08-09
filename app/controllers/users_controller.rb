@@ -15,8 +15,11 @@ class UsersController < ApplicationController
   end
 
   def get_shoe
-    update_show_styles()
+    update_show_styles(Shoe.find(params[:shoe_id]), params[:vote])
+
     @user = User.find(params[:id])
+
+
     @shoe = Shoe.all.where(gender: @user.gender).shuffle[0]
     render json: [@shoe.name,  @shoe.seller, @shoe.url, @shoe.price, @shoe.description]
   end
