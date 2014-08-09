@@ -14,14 +14,16 @@
           .label.label-seamless
             Rap
       .col-xs-7
-        %h3.shoe-title
-          = link_to "Nike Air Yeezy II Black Solar Red", "/"
-        .jumbotron
-          = image_tag "example.jpg", :class => "shoe-image"
+        .product
+          %h3.shoe-title
+            = link_to "Nike Air Yeezy II Black Solar Red", "/"
+          .jumbotron
+            = image_tag "example.jpg", :class => "shoe-image"
       .col-xs-2
         .vote-section
-          .jumbotron.vote
-            .vote-button ^
-          .jumbotron.vote
-            .vote-button ^
-
+          .jumbotron.null-padder.vote{:onclick => "fadeOutImage('fadeOutUp')"}
+            .padder
+              = image_tag "up.png", :class => "vote-button"
+          .jumbotron.null-padder.vote{:onclick => "fadeOutImage('fadeOutDown')"}
+            .padder
+              = image_tag "down.png", :class => "vote-button"

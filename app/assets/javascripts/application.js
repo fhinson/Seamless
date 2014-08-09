@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function fadeOutImage(obj){
+  $(".product").removeClass("animated zoomIn fadeOutUp fadeOutDown");
+  $(".product").addClass("animated " + obj);
+  setTimeout(showProduct, 1000);
+}
+
+function showProduct(){
+  console.log("should show");
+  $(".product").removeClass("animated fadeOutUp fadeOutDown");
+  $(".product").addClass("animated zoomIn");
+}

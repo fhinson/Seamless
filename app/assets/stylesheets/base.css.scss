@@ -36,8 +36,9 @@ body{
 .shoe-title a:hover{
   color:rgba(92, 151, 191, 0.6);
   text-decoration:none;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
-
 
 .shoe-image{
   width:90%;
@@ -57,12 +58,14 @@ body{
 }
 
 .vote{
-  background:#eeeeee;
+  background:#DADFE1;
   cursor:pointer;
 }
 
 .vote:hover{
   background:#f9f9f9;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .vote:active{
@@ -72,9 +75,16 @@ body{
 .vote-button{
   text-align:center;
   margin:0px auto;
-  font-size:80px;
-  font-weight:bold;
-  line-height:60px;
-  margin-bottom:-10px;
-  color:white;
+  width:100%;
+}
+
+.null-padder{
+  padding-left:0px!important;
+  padding-right:0px!important;
+  padding-top:0px!important;
+  padding-bottom:0px!important;
+}
+
+.padder{
+  padding:45px;
 }
