@@ -36,14 +36,9 @@
     .row
       .col-xs-2
         %h3.shoe-price.product
-          = number_to_currency(@shoe.price)
-        .tag-section.product
-          .label.label-seamless
-            Etsy
-          .label.label-seamless
-            Basketball
-          .label.label-seamless
-            Rap
+          = "$" + number_to_currency(@shoe.price)
+        %p.shoe-description.product
+          = @shoe.description
       .col-xs-6
         .product
           %h3.shoe-title
