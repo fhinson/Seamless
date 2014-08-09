@@ -14,6 +14,12 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def get_shoe
+    @shoe = Shoe.all.shuffle[0]
+    render json: [@shoe.name,  @shoe.seller, @shoe.url]
+  end
+
   private
   def user_params
     params.require(:user).permit(:name)
@@ -30,5 +36,6 @@ class UsersController < ApplicationController
 
     return "Adult"
   end
+
 
 end
