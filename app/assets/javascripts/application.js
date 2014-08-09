@@ -40,6 +40,7 @@ function getShoe(){
       $('.shoe-image').attr('src', data[2]);
     },
     error: function (response) {
+      $document.write("No shoes for you");
     }
   });
 }
