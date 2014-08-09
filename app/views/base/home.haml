@@ -3,6 +3,29 @@
     seam
     %span.less less
 
+  -# User Input
+    .container
+      = form_for @user do |f|
+        -# first page
+        %h3.text-center
+          Hello, I am seamless.
+
+        -# second page
+        %h3.text-center
+          Welcome,
+          = f.text_field :name
+
+        -# third page
+        %p.text-center
+          Please tell me about yourself, ((name))
+
+        %p.text-center
+          = f.label :age, "I am "
+          = f.number_field :age
+
+        = f.submit
+
+
   -# Shoe
   .recommendation-section
     .row
