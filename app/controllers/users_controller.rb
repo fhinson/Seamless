@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def get_shoe
     @user = User.find(params[:id])
     @shoe = Shoe.all.where(gender: @user.gender).shuffle[0]
-    render json: [@shoe.name,  @shoe.seller, @shoe.url, @shoe.price]
+    render json: [@shoe.name,  @shoe.seller, @shoe.url, @shoe.price, @shoe.description]
   end
 
   def set_name
