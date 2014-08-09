@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140809181647) do
+ActiveRecord::Schema.define(version: 20140809211913) do
 
   create_table "shoes", force: true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140809181647) do
     t.string   "product_type"
     t.string   "gender"
     t.string   "color"
+    t.integer  "popularity"
   end
 
   create_table "taggings", force: true do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140809181647) do
     t.string   "gender"
     t.string   "music"
     t.string   "sport"
+    t.float    "si",         default: 0.5
   end
 
 end
