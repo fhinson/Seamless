@@ -7,12 +7,21 @@
     .row
       .col-xs-2
         .tag-section
-          tags & info
+          .label.label-seamless
+            Etsy
+          .label.label-seamless
+            Basketball
+          .label.label-seamless
+            Rap
       .col-xs-7
         %h3.shoe-title
-          Nike Air Yeezy II Black Solar Red
+          = link_to "Nike Air Yeezy II Black Solar Red", "/"
         .jumbotron
           = image_tag "example.jpg", :class => "shoe-image"
-      .col-xs-3
+      .col-xs-2
         .vote-section
-          vote icons
+          .jumbotron.vote
+            .vote-button ^
+          .jumbotron.vote
+            .vote-button ^
+
