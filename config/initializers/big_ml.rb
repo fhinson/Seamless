@@ -5,3 +5,6 @@ BigML.configure do |c|
   #c.debug   = true # Raises errors for bad requests
 end
 
+file_path = "iris.csv"
+source = BigML::Source.create(file_path)
+dataset = source.to_dataset

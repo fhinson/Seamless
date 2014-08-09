@@ -30,9 +30,6 @@ GEM
     acts-as-taggable-on (3.3.0)
       activerecord (>= 3, < 5)
     arel (5.0.1.20140414130214)
-    big_ml (0.1.3)
-      httmultiparty
-      json
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -49,13 +46,6 @@ GEM
     haml (4.0.5)
       tilt
     hike (1.2.3)
-    httmultiparty (0.3.15)
-      httparty (>= 0.7.3)
-      mimemagic
-      multipart-post
-    httparty (0.13.1)
-      json (~> 1.8)
-      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
@@ -69,11 +59,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mimemagic (0.2.1)
     minitest (5.4.0)
     multi_json (1.10.1)
-    multi_xml (0.5.5)
-    multipart-post (2.0.0)
     oauth (0.4.7)
     polyglot (0.3.5)
     rack (1.5.2)
@@ -141,7 +128,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  big_ml
   coffee-rails (~> 4.0.0)
   etsy
   haml
