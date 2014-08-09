@@ -16,13 +16,15 @@
 //= require_tree .
 
 function fadeOutImage(obj){
-  $(".product").removeClass("animated zoomIn fadeOutUp fadeOutDown");
+  $(".product").removeClass("animated fadeInDown fadeInUp fadeOutUp fadeOutDown");
   $(".product").addClass("animated " + obj);
-  setTimeout(showProduct, 1000);
+  setTimeout(function(){
+    showProduct(obj);
+  }, 1000);
 }
 
-function showProduct(){
+function showProduct(obj){
   console.log("should show");
   $(".product").removeClass("animated fadeOutUp fadeOutDown");
-  $(".product").addClass("animated zoomIn");
+  $(".product").addClass("animated " + (obj == "fadeOutDown" ? "fadeInDown" : "fadeInUp"));
 }
