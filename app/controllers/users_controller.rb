@@ -15,7 +15,9 @@ class UsersController < ApplicationController
   end
 
   def get_shoe
-    update_show_styles(Shoe.find(params[:shoe_id]), params[:vote])
+    shoe = Shoe.find(params[:shoe_id])
+    @user.styles['shoe.product_type'] = update_show_styles(shoe, params[:vote])
+
 
     @user = User.find(params[:id])
 
