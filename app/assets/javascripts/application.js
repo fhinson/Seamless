@@ -38,7 +38,7 @@ function getShoe(){
       $(".shoe-title").children("a").attr("href", data[1]);
       $(".shoe-title").children("a").text(data[0]);
       $('.shoe-image').attr('src', data[2]);
-      $('.shoe-price').text("$" + data[3]);
+      $('.shoe-price').text("$" + data[3].toFixed(2));
     },
     error: function (response) {
       $document.write("No shoes for you");

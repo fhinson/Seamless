@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140809160841) do
     t.string   "brand"
     t.text     "description"
     t.string   "age_group"
-    t.decimal  "price"
+    t.float    "price"
     t.string   "product_type"
     t.string   "gender"
     t.string   "color"
