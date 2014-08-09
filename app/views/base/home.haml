@@ -6,31 +6,33 @@
     seam
     %span.less less
 
-  -# User Input
-    .container
-      = form_for @user do |f|
-        -# first page
-        %h3.text-center
-          Hello, I am seamless.
+    .central.push
+      %h1.welcome Hi. What's your name?
+      %input.form-control.inputter{:placeholder => "John Doe", :style => "border:0; height:50px;", :onkeypress => "return runScript(event)"}
+      %select.form-control.inputter2{:style => "display:none"}
+        %option{value: "one"} Men's
+        %option{value: "two"} Women's
+        %option{value: "three"} Youth Girl
+        %option{value: "four"} Unisex's
+        %option{value: "five"} Infant
+        %option{value: "six"} Childrens
+      %select.form-control.inputter3{:style => "display:none"}
+        %option{value: "one"} Soccer
+        %option{value: "two"} Basketball
+        %option{value: "three"} Baseball
+        %option{value: "four"} Football
+        %option{value: "five"} Running
+        %option{value: "six"} Swimming
+      %select.form-control.inputter4{:style => "display:none"}
+        %option{value: "one"} Classical
+        %option{value: "two"} Country
+        %option{value: "three"} Electronic
+        %option{value: "four"} Pop
+        %option{value: "five"} Rock
+        %option{value: "six"} Hip-Hop
 
-        -# second page
-        %h3.text-center
-          Welcome,
-          = f.text_field :name
 
-        -# third page
-        %p.text-center
-          Please tell me about yourself, ((name))
-
-        %p.text-center
-          = f.label :age, "I am "
-          = f.number_field :age
-
-        = f.submit
-
-
-  -# Shoe
-  .recommendation-section
+  .recommendation-section{:style => "display:none"}
     .row
       .col-xs-2
         %h3.shoe-price.product

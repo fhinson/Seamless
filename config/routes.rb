@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :users, only: [:create] do
     member do
       get :get_shoe
+      get :set_name
+      get :set_gender
+      get :set_sport
+      get :set_music
     end
   end
 

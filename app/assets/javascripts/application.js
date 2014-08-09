@@ -15,6 +15,13 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).ready(function(){
+  setTimeout(function(){
+    $(".push").addClass("animated fadeInUp");
+    $(".push").show();
+  }, 700);
+});
+
 function fadeOutImage(obj){
   $(".product").removeClass("animated fadeInDown fadeInUp fadeOutUp fadeOutDown");
   $(".product").addClass("animated " + obj);
@@ -42,4 +49,89 @@ function getShoe(){
     error: function (response) {
     }
   });
+}
+
+function runScript(e) {
+    if (e.keyCode == 13) {
+        saveName();
+        return false;
+    }
+}
+
+$(document).ready(function(){
+  $("select.inputter2").change(function(){
+    $(".welcome").removeClass("animated fadeIn");
+    $.ajax({
+      url: '/users/' + id + '/set_gender',
+      type:   'GET',
+      data: {gender: $(this).children(":selected").html()},
+      success: function (data) {
+        hideText("Awesome. What's your favorite sport?");
+        $(".inputter2").hide();
+        $(".inputter3").show();
+      },
+      error: function (response) {
+      }
+    });
+  });
+})
+
+$(document).ready(function(){
+  $("select.inputter3").change(function(){
+    $(".welcome").removeClass("animated fadeIn");
+    $.ajax({
+      url: '/users/' + id + '/set_sport',
+      type:   'GET',
+      data: {sport: $(this).children(":selected").html()},
+      success: function (data) {
+        hideText("Awesome. What's your favorite type of music?");
+        $(".inputter3").hide();
+        $(".inputter4").show();
+      },
+      error: function (response) {
+      }
+    });
+  });
+})
+
+$(document).ready(function(){
+  $("select.inputter4").change(function(){
+    $(".welcome").removeClass("animated fadeIn");
+    $.ajax({
+      url: '/users/' + id + '/set_music',
+      type:   'GET',
+      data: {music: $(this).children(":selected").html()},
+      success: function (data) {
+        getShoe();
+        $(".push").addClass("animated fadeOut");
+        $(".push").hide();
+        setTimeout(function(){
+          $(".recommendation-section").addClass("animated fadeIn");
+          $(".recommendation-section").show();
+        }, 750);
+      },
+      error: function (response) {
+      }
+    });
+  });
+})
+
+function saveName(){
+  $.ajax({
+    url: '/users/' + id + '/set_name',
+    type:   'GET',
+    data: {name: $(".inputter").val()},
+    success: function (data) {
+      hideText("Great. What range do you fit into?");
+      $(".inputter").hide();
+      $(".inputter2").show();
+    },
+    error: function (response) {
+    }
+  });
+}
+
+function hideText(text){
+  $(".welcome").text(text);
+  $(".welcome").addClass("animated fadeIn");
 }
