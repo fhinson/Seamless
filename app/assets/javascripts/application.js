@@ -24,7 +24,6 @@ function fadeOutImage(obj){
 }
 
 function showProduct(obj){
-  console.log("should show");
   $(".product").removeClass("animated fadeOutUp fadeOutDown");
   $(".product").addClass("animated " + (obj == "fadeOutDown" ? "fadeInDown" : "fadeInUp"));
 }
