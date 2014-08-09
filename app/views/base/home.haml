@@ -53,11 +53,14 @@
           .jumbotron.null-padder.vote{:onclick => "fadeOutImage('fadeOutDown')"}
             .padder
               = image_tag "down.png", :class => "vote-button"
+    .container.product
+      .col-xs-3.col-xs-offset-4
+        %a{href:"https://twitter.com/share",class:"twitter-share-button", data:{text:"This shoe was Seamlessly recommended for my personality!!", count:"none", hashtags:"seamless",dnt:"true"}}
+          Tweet
 
-%a{href:"https://twitter.com/share",class:"twitter-share-button", data:{text:"This shoe was Seamlessly recommended for my personality!!", count:"none", hashtags:"seamless",dnt:"true"}}
-  Tweet
+        .fb-share-button{data:{href:"https://developers.facebook.com/docs/plugins/"}}
 
-.fb-share-button{data:{href:"https://developers.facebook.com/docs/plugins/"}}
+
 
 
 #fb-root
