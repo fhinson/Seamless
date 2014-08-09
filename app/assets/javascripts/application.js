@@ -25,7 +25,7 @@ $(document).ready(function(){
 function fadeOutImage(obj){
   $(".product").removeClass("animated fadeInDown fadeInUp fadeOutUp fadeOutDown");
   $(".product").addClass("animated " + obj);
-  getShoe();
+  getShoe(obj);
   setTimeout(function(){
     showProduct(obj);
   }, 1000);
@@ -36,10 +36,11 @@ function showProduct(obj){
   $(".product").addClass("animated " + (obj == "fadeOutDown" ? "fadeInDown" : "fadeInUp"));
 }
 
-function getShoe(){
+function getShoe(obj){
   $.ajax({
     url: '/users/' + id + '/get_shoe',
     type:   'GET',
+    data:{vote: (obj == "fadeOutDown" ? -1 : 1), shoe_id: shoeId},
     dataType: 'json',
     success: function (data) {
       $(".shoe-title").children("a").attr("href", data[1]);
